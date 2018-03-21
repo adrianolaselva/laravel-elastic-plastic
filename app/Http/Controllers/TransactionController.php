@@ -13,14 +13,21 @@ class TransactionController extends Controller
     {
         Transaction::create([
             'date' => Carbon::now(),
-            'acquire' => 'Cielo',
-            'brand' => 'MasterCard',
-            'operation' => 'Venda crédito',
-            'value' => 98.12
+            'acquire' => 'CIELO',
+            'brand' => 'VISA',
+            'operation' => 'Venda débito',
+            'value' => 198.12
         ]);
 
         $result = Transaction::all();
-        var_dump($result->toArray());
+        return response()->json($result);
+    }
+
+    public function buscar()
+    {
+        $result = Transaction::search()->queryString('acquire:*')->get();
+
+        return response()->json($result->hits()->all());
     }
 
 }

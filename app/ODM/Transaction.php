@@ -19,4 +19,6 @@ class Transaction extends Model
 
     public $fillable = ['id', 'date', 'acquire', 'brand', 'operation', 'value'];
 
+    public $syncDocument = false;
+
 }

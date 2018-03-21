@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'TransactionController@index');
+
+Route::get('/buscar', 'TransactionController@buscar');

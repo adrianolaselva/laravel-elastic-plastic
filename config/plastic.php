@@ -90,7 +90,9 @@ return [
         'models' => [
 
             // The models for the default index
-            env('PLASTIC_INDEX', 'plastic') => [],
+            env('PLASTIC_INDEX', 'plastic') => [
+                \App\ODM\Transaction::class
+            ],
         ],
 
         /*
